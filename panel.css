@@ -1,0 +1,967 @@
+/* MyFormSnapper Panel Styles */
+#myformsnapper-panel-root * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+}
+
+.myformsnapper-panel {
+  position: fixed !important;
+  top: 0 !important;
+  right: -450px !important;
+  width: 450px !important;
+  height: 100vh !important;
+  background: white !important;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1) !important;
+  transition: right 0.3s ease-in-out !important;
+  z-index: 2147483647 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+}
+
+.myformsnapper-panel.open {
+  right: 0 !important;
+}
+
+.myformsnapper-overlay {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  background: rgba(0, 0, 0, 0.5) !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out !important;
+  z-index: 2147483646 !important;
+}
+
+.myformsnapper-overlay.show {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.myformsnapper-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  color: white !important;
+  padding: 20px !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  flex-shrink: 0 !important;
+}
+
+.myformsnapper-header-content {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+}
+
+.myformsnapper-logo {
+  width: 40px !important;
+  height: 40px !important;
+  background: white !important;
+  border-radius: 10px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 24px !important;
+}
+
+.myformsnapper-header-text h1 {
+  font-size: 24px !important;
+  font-weight: 600 !important;
+  margin: 0 !important;
+  color: white !important;
+}
+
+.myformsnapper-header-text p {
+  font-size: 14px !important;
+  opacity: 0.9 !important;
+  margin: 2px 0 0 0 !important;
+  color: white !important;
+}
+
+.myformsnapper-header-actions {
+  display: flex !important;
+  gap: 8px !important;
+  align-items: center !important;
+}
+
+.myformsnapper-settings-btn {
+  width: 36px !important;
+  height: 36px !important;
+  background: rgba(255, 255, 255, 0.2) !important;
+  border: none !important;
+  border-radius: 8px !important;
+  color: white !important;
+  font-size: 20px !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.2s !important;
+}
+
+.myformsnapper-settings-btn:hover {
+  background: rgba(255, 255, 255, 0.3) !important;
+  transform: rotate(90deg) !important;
+}
+
+.myformsnapper-close-btn {
+  width: 36px !important;
+  height: 36px !important;
+  background: rgba(255, 255, 255, 0.2) !important;
+  border: none !important;
+  border-radius: 8px !important;
+  color: white !important;
+  font-size: 20px !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: background 0.2s !important;
+}
+
+.myformsnapper-close-btn:hover {
+  background: rgba(255, 255, 255, 0.3) !important;
+}
+
+.myformsnapper-panel-content {
+  flex: 1 !important;
+  overflow-y: auto !important;
+  padding: 20px !important;
+  background: white !important;
+}
+
+.myformsnapper-main-buttons {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  border-radius: 20px !important;
+  padding: 30px !important;
+  display: flex !important;
+  justify-content: space-around !important;
+  align-items: center !important;
+  margin-bottom: 20px !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.myformsnapper-main-buttons::after {
+  content: '' !important;
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 40% !important;
+  background: linear-gradient(to bottom, transparent, rgba(255, 105, 180, 0.3)) !important;
+}
+
+.myformsnapper-main-btn {
+  background: none !important;
+  border: none !important;
+  color: white !important;
+  cursor: pointer !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 8px !important;
+  z-index: 1 !important;
+  position: relative !important;
+  transition: transform 0.2s !important;
+  padding: 10px !important;
+}
+
+.myformsnapper-main-btn:hover {
+  transform: scale(1.05) !important;
+}
+
+.myformsnapper-icon {
+  font-size: 32px !important;
+}
+
+.myformsnapper-label {
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  color: white !important;
+}
+
+.myformsnapper-arrow {
+  color: white !important;
+  font-size: 24px !important;
+  opacity: 0.6 !important;
+}
+
+.myformsnapper-voice-section {
+  background: linear-gradient(135deg, #ff6b9d 0%, #feca57 100%) !important;
+  border-radius: 20px !important;
+  padding: 25px !important;
+  margin-bottom: 20px !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  cursor: pointer !important;
+  transition: transform 0.2s !important;
+}
+
+.myformsnapper-voice-section:hover {
+  transform: translateX(-5px) !important;
+}
+
+.myformsnapper-voice-content {
+  display: flex !important;
+  align-items: center !important;
+  gap: 15px !important;
+  color: white !important;
+}
+
+.myformsnapper-voice-icon {
+  font-size: 28px !important;
+}
+
+.myformsnapper-voice-text h3 {
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  margin: 0 !important;
+  color: white !important;
+}
+
+.myformsnapper-voice-text p {
+  font-size: 13px !important;
+  opacity: 0.9 !important;
+  margin: 2px 0 0 0 !important;
+  color: white !important;
+}
+
+.myformsnapper-voice-arrow {
+  color: white !important;
+  font-size: 24px !important;
+}
+
+.myformsnapper-section {
+  margin-bottom: 15px !important;
+}
+
+.myformsnapper-section-header {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 12px 0 !important;
+  cursor: pointer !important;
+  border-bottom: 1px solid #e0e0e0 !important;
+  transition: background 0.2s !important;
+}
+
+.myformsnapper-section-header:hover {
+  background: rgba(0, 0, 0, 0.02) !important;
+}
+
+.myformsnapper-section-title {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  color: #333 !important;
+}
+
+.myformsnapper-section-icon {
+  font-size: 20px !important;
+}
+
+.myformsnapper-expand-icon {
+  font-size: 16px !important;
+  color: #666 !important;
+  transition: transform 0.3s !important;
+}
+
+.myformsnapper-expand-icon.myformsnapper-expanded {
+  transform: rotate(180deg) !important;
+}
+
+.myformsnapper-section-content {
+  padding: 15px 0 !important;
+  display: none !important;
+  animation: slideDown 0.3s ease-in-out !important;
+}
+
+.myformsnapper-section-content.myformsnapper-expanded {
+  display: block !important;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.myformsnapper-upload-area {
+  border: 2px dashed #ccc !important;
+  border-radius: 12px !important;
+  padding: 30px !important;
+  text-align: center !important;
+  background: #fafafa !important;
+  transition: background 0.2s, border-color 0.2s !important;
+}
+
+.myformsnapper-upload-area:hover {
+  background: #f0f0f0 !important;
+  border-color: #999 !important;
+}
+
+.myformsnapper-upload-icon {
+  font-size: 48px !important;
+  margin-bottom: 10px !important;
+}
+
+.myformsnapper-upload-title {
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  color: #333 !important;
+  margin-bottom: 5px !important;
+}
+
+.myformsnapper-upload-subtitle {
+  font-size: 13px !important;
+  color: #666 !important;
+  margin-bottom: 15px !important;
+}
+
+.myformsnapper-choose-files-btn {
+  background: #667eea !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 8px !important;
+  padding: 12px 30px !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  cursor: pointer !important;
+  transition: background 0.2s !important;
+}
+
+.myformsnapper-choose-files-btn:hover {
+  background: #5a67d8 !important;
+}
+
+.myformsnapper-file-item {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 12px 0 !important;
+  border-bottom: 1px solid #e0e0e0 !important;
+}
+
+.myformsnapper-file-name {
+  font-size: 14px !important;
+  color: #333 !important;
+}
+
+.myformsnapper-remove-btn {
+  background: #ff6b6b !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 6px !important;
+  padding: 6px 15px !important;
+  font-size: 13px !important;
+  cursor: pointer !important;
+  transition: background 0.2s !important;
+}
+
+.myformsnapper-remove-btn:hover {
+  background: #ff5252 !important;
+}
+
+.myformsnapper-kb-status {
+  padding: 10px 0 !important;
+  font-size: 14px !important;
+  color: #666 !important;
+}
+
+.myformsnapper-success-message {
+  background: #d4edda !important;
+  border: 1px solid #c3e6cb !important;
+  border-radius: 8px !important;
+  padding: 15px !important;
+  margin-top: 15px !important;
+  align-items: center !important;
+  gap: 10px !important;
+  animation: slideDown 0.3s ease-in-out !important;
+}
+
+/* Only show as flex when explicitly set to display: flex */
+.myformsnapper-success-message:not([style*="display: none"]) {
+  display: flex !important;
+}
+
+.myformsnapper-success-icon {
+  color: #28a745 !important;
+  font-size: 20px !important;
+}
+
+.myformsnapper-success-text {
+  color: #155724 !important;
+  font-size: 14px !important;
+}
+
+/* Embedding Progress Indicator */
+.myformsnapper-embedding-progress {
+  background: #e7f3ff !important;
+  border: 1px solid #b3d9ff !important;
+  border-radius: 8px !important;
+  padding: 15px !important;
+  margin-top: 15px !important;
+}
+
+.myformsnapper-progress-header {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  margin-bottom: 10px !important;
+}
+
+.myformsnapper-progress-icon {
+  font-size: 18px !important;
+}
+
+.myformsnapper-progress-title {
+  color: #0066cc !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+}
+
+.myformsnapper-progress-bar {
+  width: 100% !important;
+  height: 8px !important;
+  background: #d9e9ff !important;
+  border-radius: 4px !important;
+  overflow: hidden !important;
+  margin-bottom: 8px !important;
+}
+
+.myformsnapper-progress-fill {
+  height: 100% !important;
+  background: linear-gradient(90deg, #0066cc, #0052a3) !important;
+  transition: width 0.3s ease !important;
+  border-radius: 4px !important;
+}
+
+.myformsnapper-progress-text {
+  color: #0066cc !important;
+  font-size: 13px !important;
+  text-align: center !important;
+}
+
+.myformsnapper-instructions-textarea {
+  width: 100% !important;
+  min-height: 80px !important;
+  padding: 12px !important;
+  border: 1px solid #ddd !important;
+  border-radius: 8px !important;
+  font-size: 14px !important;
+  resize: vertical !important;
+  transition: border-color 0.2s !important;
+  background: white !important;
+  color: #333 !important;
+}
+
+.myformsnapper-instructions-textarea:focus {
+  outline: none !important;
+  border-color: #667eea !important;
+}
+
+.myformsnapper-notification {
+  position: fixed !important;
+  top: 20px !important;
+  right: 20px !important;
+  background: #d4edda !important;
+  border: 1px solid #c3e6cb !important;
+  border-radius: 8px !important;
+  padding: 15px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  z-index: 2147483648 !important;
+  animation: slideDown 0.3s ease-in-out !important;
+}
+
+/* API Key Section Styles */
+.myformsnapper-api-section {
+  background: white !important;
+  border: 1px solid #e0e0e0 !important;
+  border-radius: 12px !important;
+  margin-bottom: 20px !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+.myformsnapper-api-header {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 15px 20px !important;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  border-radius: 12px 12px 0 0 !important;
+}
+
+.myformsnapper-api-title {
+  color: white !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+}
+
+.myformsnapper-api-toggle {
+  background: rgba(255, 255, 255, 0.2) !important;
+  border: none !important;
+  color: white !important;
+  font-size: 18px !important;
+  width: 28px !important;
+  height: 28px !important;
+  border-radius: 6px !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: background 0.2s !important;
+}
+
+.myformsnapper-api-toggle:hover {
+  background: rgba(255, 255, 255, 0.3) !important;
+}
+
+.myformsnapper-api-content {
+  padding: 20px !important;
+  background: #f9f9f9 !important;
+  border-radius: 0 0 12px 12px !important;
+}
+
+.myformsnapper-api-status {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  margin-bottom: 15px !important;
+}
+
+.myformsnapper-status-icon {
+  font-size: 24px !important;
+}
+
+.myformsnapper-status-text {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: #333 !important;
+}
+
+.myformsnapper-api-input-group {
+  display: flex !important;
+  gap: 10px !important;
+  margin-bottom: 10px !important;
+}
+
+.myformsnapper-api-input {
+  flex: 1 !important;
+  padding: 12px !important;
+  border: 1px solid #ddd !important;
+  border-radius: 8px !important;
+  font-size: 14px !important;
+  font-family: monospace !important;
+  background: white !important;
+  color: #333 !important;
+  transition: border-color 0.2s !important;
+}
+
+.myformsnapper-api-input:focus {
+  outline: none !important;
+  border-color: #667eea !important;
+}
+
+.myformsnapper-api-input:disabled {
+  background: #f5f5f5 !important;
+  cursor: not-allowed !important;
+}
+
+.myformsnapper-api-save-btn {
+  padding: 12px 24px !important;
+  background: #667eea !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 8px !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: background 0.2s !important;
+  white-space: nowrap !important;
+}
+
+.myformsnapper-api-save-btn:hover {
+  background: #5a67d8 !important;
+}
+
+.myformsnapper-api-save-btn:disabled {
+  background: #999 !important;
+  cursor: not-allowed !important;
+}
+
+.myformsnapper-api-help {
+  text-align: right !important;
+}
+
+.myformsnapper-api-link {
+  color: #667eea !important;
+  text-decoration: none !important;
+  font-size: 13px !important;
+  transition: color 0.2s !important;
+}
+
+.myformsnapper-api-link:hover {
+  color: #5a67d8 !important;
+  text-decoration: underline !important;
+}
+
+.myformsnapper-content-wrapper {
+  transition: opacity 0.3s ease !important;
+}
+
+/* Knowledge Base Chat Styles */
+.myformsnapper-kb-chat {
+  margin-top: 20px !important;
+  border: 1px solid #e0e0e0 !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  background: white !important;
+}
+
+.myformsnapper-chat-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  color: white !important;
+  padding: 12px 15px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+.myformsnapper-chat-icon {
+  font-size: 18px !important;
+}
+
+.myformsnapper-chat-title {
+  font-size: 14px !important;
+  font-weight: 600 !important;
+}
+
+.myformsnapper-chat-messages {
+  height: 200px !important;
+  overflow-y: auto !important;
+  padding: 15px !important;
+  background: #f9f9f9 !important;
+}
+
+.myformsnapper-chat-message {
+  margin-bottom: 10px !important;
+  padding: 10px !important;
+  border-radius: 8px !important;
+  font-size: 13px !important;
+  line-height: 1.4 !important;
+  word-wrap: break-word !important;
+}
+
+.myformsnapper-chat-message.user {
+  background: #667eea !important;
+  color: white !important;
+  margin-left: 20% !important;
+  text-align: right !important;
+}
+
+.myformsnapper-chat-message.assistant {
+  background: white !important;
+  color: #333 !important;
+  margin-right: 20% !important;
+  border: 1px solid #e0e0e0 !important;
+}
+
+.myformsnapper-chat-message.system {
+  background: #fff3cd !important;
+  color: #856404 !important;
+  text-align: center !important;
+  font-style: italic !important;
+}
+
+.myformsnapper-chat-input-group {
+  display: flex !important;
+  padding: 10px !important;
+  gap: 8px !important;
+  background: white !important;
+  border-top: 1px solid #e0e0e0 !important;
+}
+
+.myformsnapper-chat-input {
+  flex: 1 !important;
+  padding: 8px 12px !important;
+  border: 1px solid #ddd !important;
+  border-radius: 6px !important;
+  font-size: 13px !important;
+  background: white !important;
+  color: #333 !important;
+}
+
+.myformsnapper-chat-input:focus {
+  outline: none !important;
+  border-color: #667eea !important;
+}
+
+.myformsnapper-chat-input:disabled {
+  background: #f5f5f5 !important;
+  cursor: not-allowed !important;
+}
+
+.myformsnapper-chat-send {
+  padding: 8px 16px !important;
+  background: #667eea !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 6px !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: background 0.2s !important;
+}
+
+.myformsnapper-chat-send:hover:not(:disabled) {
+  background: #5a67d8 !important;
+}
+
+.myformsnapper-chat-send:disabled {
+  background: #ccc !important;
+  cursor: not-allowed !important;
+}
+
+/* Progress Bar Styles */
+.myformsnapper-progress-section {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%) !important;
+  border-radius: 12px !important;
+  padding: 20px !important;
+  margin-bottom: 20px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+  animation: slideDown 0.3s ease-in-out !important;
+}
+
+.myformsnapper-progress-title {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: #333 !important;
+  margin-bottom: 15px !important;
+  text-align: center !important;
+}
+
+.myformsnapper-progress-stages {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+}
+
+.myformsnapper-stage {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  padding: 12px 15px !important;
+  background: white !important;
+  border-radius: 8px !important;
+  border-left: 4px solid #e0e0e0 !important;
+  transition: all 0.3s ease !important;
+}
+
+.myformsnapper-stage.active {
+  border-left-color: #feca57 !important;
+  background: #fffef0 !important;
+  box-shadow: 0 2px 6px rgba(254, 202, 87, 0.3) !important;
+}
+
+.myformsnapper-stage.completed {
+  border-left-color: #28a745 !important;
+  background: #f0f9f4 !important;
+}
+
+.myformsnapper-stage.error {
+  border-left-color: #dc3545 !important;
+  background: #fcf0f0 !important;
+}
+
+.myformsnapper-stage-icon {
+  font-size: 20px !important;
+  flex-shrink: 0 !important;
+}
+
+.myformsnapper-stage.active .myformsnapper-stage-icon {
+  animation: pulse 1.5s ease-in-out infinite !important;
+}
+
+.myformsnapper-stage-text {
+  font-size: 14px !important;
+  color: #333 !important;
+  font-weight: 500 !important;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Results Section Styles */
+.myformsnapper-results-summary {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 15px !important;
+  margin-bottom: 20px !important;
+}
+
+.myformsnapper-result-item {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  border-radius: 10px !important;
+  padding: 15px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 5px !important;
+}
+
+.myformsnapper-result-label {
+  font-size: 12px !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-weight: 500 !important;
+}
+
+.myformsnapper-result-value {
+  font-size: 24px !important;
+  font-weight: 700 !important;
+  color: white !important;
+}
+
+.myformsnapper-results-details {
+  margin-top: 20px !important;
+}
+
+.myformsnapper-results-details-title {
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  color: #333 !important;
+  margin-bottom: 10px !important;
+  padding-bottom: 8px !important;
+  border-bottom: 2px solid #e0e0e0 !important;
+}
+
+.myformsnapper-results-fields-list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+  max-height: 300px !important;
+  overflow-y: auto !important;
+}
+
+.myformsnapper-field-item {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 10px 12px !important;
+  background: #f9f9f9 !important;
+  border-radius: 6px !important;
+  border: 1px solid #e0e0e0 !important;
+  transition: all 0.2s !important;
+}
+
+.myformsnapper-field-item:hover {
+  background: #f0f0f0 !important;
+  border-color: #667eea !important;
+}
+
+.myformsnapper-field-name {
+  font-size: 13px !important;
+  color: #333 !important;
+  font-weight: 500 !important;
+  flex: 1 !important;
+}
+
+.myformsnapper-field-type {
+  font-size: 11px !important;
+  color: #666 !important;
+  background: #e0e0e0 !important;
+  padding: 3px 8px !important;
+  border-radius: 4px !important;
+  margin: 0 8px !important;
+}
+
+.myformsnapper-field-status {
+  font-size: 12px !important;
+  color: #28a745 !important;
+  font-weight: 500 !important;
+}
+
+.myformsnapper-no-fields {
+  text-align: center !important;
+  padding: 30px !important;
+  color: #999 !important;
+  font-size: 14px !important;
+  font-style: italic !important;
+}
+
+/* Primary button style */
+.myformsnapper-primary-btn {
+  flex: 1 !important;
+  max-width: 100% !important;
+}
+
+.myformsnapper-primary-btn .myformsnapper-icon {
+  font-size: 36px !important;
+}
+
+.myformsnapper-primary-btn .myformsnapper-label {
+  font-size: 18px !important;
+  font-weight: 600 !important;
+}
+
+.myformsnapper-primary-btn:disabled {
+  opacity: 0.6 !important;
+  cursor: not-allowed !important;
+  transform: none !important;
+}
+
+.myformsnapper-primary-btn:disabled:hover {
+  transform: none !important;
+}
+
+.myformsnapper-secondary-btn {
+  flex: 1 !important;
+  max-width: 100% !important;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+}
+
+.myformsnapper-secondary-btn .myformsnapper-icon {
+  font-size: 32px !important;
+}
+
+.myformsnapper-secondary-btn .myformsnapper-label {
+  font-size: 16px !important;
+  font-weight: 500 !important;
+}
+
+.myformsnapper-secondary-btn:hover {
+  background: linear-gradient(135deg, #5568d3 0%, #653a8b 100%) !important;
+}
